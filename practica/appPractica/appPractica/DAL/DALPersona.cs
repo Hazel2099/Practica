@@ -27,6 +27,7 @@ namespace appPractica.Winform.DAL
                 comando.Parameters.AddWithValue("@Telefono", persona.Telefono);
                 comando.Parameters.AddWithValue("@CorreoElectronico", persona.CorreoElectronico);
                 comando.Parameters.AddWithValue("@FechaNacimiento", persona.FechaNacimiento);
+                comando.Parameters.AddWithValue("@Edad", persona.Edad);
                 comando.Parameters.AddWithValue("@Genero", persona.Genero);
                 comando.Parameters.AddWithValue("@Direccion", persona.Direccion);
                 comando.Parameters.AddWithValue("@Nacionalidad", persona.Nacionalidad);
@@ -62,6 +63,7 @@ namespace appPractica.Winform.DAL
                 comando.Parameters.AddWithValue("@Telefono", persona.Telefono);
                 comando.Parameters.AddWithValue("@CorreoElectronico", persona.CorreoElectronico);
                 comando.Parameters.AddWithValue("@FechaNacimiento", persona.FechaNacimiento);
+                comando.Parameters.AddWithValue("@Edad", persona.Edad);
                 comando.Parameters.AddWithValue("@Genero", persona.Genero);
                 comando.Parameters.AddWithValue("@Direccion", persona.Direccion);
                 comando.Parameters.AddWithValue("@Nacionalidad", persona.Nacionalidad);
@@ -96,6 +98,7 @@ namespace appPractica.Winform.DAL
                         opersona.Telefono = (int)dr["Telefono"];
                         opersona.CorreoElectronico = dr["CorreoElectronico"].ToString();
                         opersona.FechaNacimiento = Convert.ToDateTime(dr["FechaNacimiento"]);
+                        opersona.Edad= (int)dr["Edad"];
                         opersona.Genero = dr["Genero"].ToString();
                         opersona.Direccion = dr["Direccion"].ToString();
                         opersona.Nacionalidad = dr["Nacionalidad"].ToString();
@@ -138,6 +141,7 @@ namespace appPractica.Winform.DAL
                     opersona.Telefono = (int)dr["Telefono"];
                     opersona.CorreoElectronico = dr["CorreoElectronico"].ToString();
                     opersona.FechaNacimiento = Convert.ToDateTime(dr["FechaNacimiento"]);
+                    opersona.Edad = (int)dr["Edad"];
                     opersona.Genero = dr["Genero"].ToString();
                     opersona.Direccion = dr["Direccion"].ToString();
                     opersona.Nacionalidad = dr["Nacionalidad"].ToString();

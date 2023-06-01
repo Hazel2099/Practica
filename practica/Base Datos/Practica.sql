@@ -1,3 +1,4 @@
+create database Practica;
 
 USE  Practica;
 
@@ -14,6 +15,8 @@ CorreoElectronico varchar (60),
 Nacionalidad varchar(60),
 CONSTRAINT PK_Persona PRIMARY KEY (id));
 
+Alter table Persona Add  Edad int
+
 
 -----Insertar
 
@@ -23,6 +26,7 @@ CREATE PROCEDURE P_Insertar
 @Apellido1 varchar(50),
 @Apellido2 varchar(50),
 @FechaNacimiento Datetime,
+@Edad int,
 @Genero varchar(50),
 @Direccion varchar(80),
 @Telefono int,
@@ -31,8 +35,8 @@ CREATE PROCEDURE P_Insertar
 AS
 BEGIN
 	INSERT INTO dbo.Persona(
-		Id, Nombre, Apellido1, Apellido2, FechaNacimiento, Genero,Direccion,Telefono,CorreoElectronico,Nacionalidad)
-		VALUES(@Id, @Nombre, @Apellido1, @Apellido2, @FechaNacimiento, @Genero,@Direccion,@Telefono,@CorreoElectronico,@Nacionalidad)
+		Id, Nombre, Apellido1, Apellido2, FechaNacimiento,Edad, Genero,Direccion,Telefono,CorreoElectronico,Nacionalidad)
+		VALUES(@Id, @Nombre, @Apellido1, @Apellido2, @FechaNacimiento,@Edad, @Genero,@Direccion,@Telefono,@CorreoElectronico,@Nacionalidad)
 END
 GO
 
@@ -56,6 +60,7 @@ CREATE PROCEDURE P_Actualizar
 @Apellido1 varchar(50),
 @Apellido2 varchar(50),
 @FechaNacimiento Datetime,
+@Edad int,
 @Genero varchar(50),
 @Direccion varchar(80),
 @Telefono int,
@@ -65,7 +70,7 @@ AS
 BEGIN
 	Update dbo.Persona
 		set Nombre=@Nombre, Apellido1= @Apellido1, Apellido2=@Apellido2, 
-		FechaNacimiento=@FechaNacimiento, Genero=@Genero,Direccion=@Direccion,Telefono=@Telefono,
+		FechaNacimiento=@FechaNacimiento,Edad= @Edad,Genero=@Genero,Direccion=@Direccion,Telefono=@Telefono,
 		CorreoElectronico=@CorreoElectronico,Nacionalidad=@Nacionalidad WHERE Id=@Id
 
 		

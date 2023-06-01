@@ -20,6 +20,8 @@ namespace appPractica.Winform.Entities
 
         public DateTime FechaNacimiento { get; set; }
 
+        public int Edad { get; set; }
+
         public string Genero { get; set; }
 
         public string Direccion { get; set; }

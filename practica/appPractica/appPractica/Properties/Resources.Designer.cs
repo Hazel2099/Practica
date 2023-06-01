@@ -59,15 +59,5 @@ namespace appPractica.Winform.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap UtnLogo {
-            get {
-                object obj = ResourceManager.GetObject("UtnLogo", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
     }
 }

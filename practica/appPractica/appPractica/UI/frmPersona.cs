@@ -21,6 +21,9 @@ namespace appPractica.Winform.UI
         }
         private void frmPersona_Load(object sender, EventArgs e)
         {
+            var logica = new BLL.BLLPersona();
+            dgvPersonas.DataSource = logica.SeleccionarTodo();
+
             cmbGenero.DataSource = Enum.GetValues(typeof(Genero));
             cmbNacionalidad.DataSource = Enum.GetValues(typeof(Nacionalidad));
         }
@@ -40,6 +43,7 @@ namespace appPractica.Winform.UI
                     Apellido1 = txtApellido1.Text,
                     Apellido2 = txtApellido2.Text,
                     FechaNacimiento = dtpFechaNacimiento.Value,
+                    Edad = int.Parse(txtEdad.Text),
                     Genero = cmbGenero.SelectedValue.ToString(),
                     Direccion = txtDireccion.Text,
                     Telefono = int.Parse(txtTelefono.Text),
@@ -48,8 +52,8 @@ namespace appPractica.Winform.UI
                 };
 
                 logica.Guardar(p);
-                
-                dgvPersonas.DataSource = logica.SeleccionarTodo().FindAll(x => x.Id.ToString().Equals(txtId.Text));
+                              
+                dgvPersonas.DataSource = logica.SeleccionarTodo();
 
                 LimpiarCampos();
 
@@ -85,12 +89,15 @@ namespace appPractica.Winform.UI
                     txtApellido2.Text = p.Apellido2;
                     txtCorreo.Text = p.CorreoElectronico;
                     txtDireccion.Text = p.Direccion;
-                    txtTelefono.Text = p.Telefono.ToString();
+                    txtTelefono.Text = p.Telefono.ToString();      
                     dtpFechaNacimiento.Value = p.FechaNacimiento;
+                    txtEdad.Text = p.Edad.ToString();
                     cmbGenero.Text = p.Genero;
                     cmbNacionalidad.Text = p.Nacionalidad;
 
-                    dgvPersonas.DataSource = logica.SeleccionarTodo().FindAll(x => x.Id.ToString().Equals(txtId.Text));
+                    dgvPersonas.DataSource = logica.SeleccionarTodo();
+
+                    btnInsertar.Enabled = false;
                 }
                 else
                 {
@@ -118,6 +125,7 @@ namespace appPractica.Winform.UI
                     Apellido1 = txtApellido1.Text,
                     Apellido2 = txtApellido2.Text,
                     FechaNacimiento = dtpFechaNacimiento.Value,
+                    Edad = int.Parse(txtEdad.Text),
                     Genero = cmbGenero.SelectedValue.ToString(),
                     Direccion = txtDireccion.Text,
                     Telefono = int.Parse(txtTelefono.Text),
@@ -127,7 +135,9 @@ namespace appPractica.Winform.UI
 
                 logica.Guardar(p);
 
-                dgvPersonas.DataSource = logica.SeleccionarTodo().FindAll(x => x.Id.ToString().Equals(txtId.Text));
+               
+
+                dgvPersonas.DataSource = logica.SeleccionarTodo();
 
                 LimpiarCampos();
 
@@ -164,7 +174,7 @@ namespace appPractica.Winform.UI
             txtDireccion.Text = "";
             txtTelefono.Text = "";
             dtpFechaNacimiento.Value = Convert.ToDateTime("01/01/1900");
-           
+            txtEdad.Text = "";
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -182,7 +192,8 @@ namespace appPractica.Winform.UI
 
                 logica.Eliminar(id);
 
-                dgvPersonas.DataSource = logica.SeleccionarTodo().FindAll(x => x.Id.ToString().Equals(txtId.Text));
+                dgvPersonas.DataSource = logica.SeleccionarTodo();
+                dgvPersonas.Refresh();
 
                 LimpiarCampos();
 
@@ -195,6 +206,12 @@ namespace appPractica.Winform.UI
 
 
 
+        }
+
+        private void dtpFechaNacimiento_ValueChanged(object sender, EventArgs e)
+        {
+            int edad = DateTime.Today.AddTicks(-dtpFechaNacimiento.Value.Ticks).Year - 1;
+             txtEdad.Text = edad.ToString();
         }
     }
 }
