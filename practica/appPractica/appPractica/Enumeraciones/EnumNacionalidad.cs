@@ -1,0 +1,1 @@
+﻿enum Nacionalidad { extranjero=1, Nacional=2}

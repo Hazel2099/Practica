@@ -1,0 +1,11 @@
+C:\Users\ortiz\OneDrive\Documentos\practica\appPractica\appPractica\bin\Debug\appPractica.exe.config
+C:\Users\ortiz\OneDrive\Documentos\practica\appPractica\appPractica\bin\Debug\appPractica.exe
+C:\Users\ortiz\OneDrive\Documentos\practica\appPractica\appPractica\bin\Debug\appPractica.pdb
+C:\Users\ortiz\OneDrive\Documentos\practica\appPractica\appPractica\obj\Debug\appPractica.csproj.AssemblyReference.cache
+C:\Users\ortiz\OneDrive\Documentos\practica\appPractica\appPractica\obj\Debug\appPractica.csproj.SuggestedBindingRedirects.cache
+C:\Users\ortiz\OneDrive\Documentos\practica\appPractica\appPractica\obj\Debug\appPractica.Winform.Properties.Resources.resources
+C:\Users\ortiz\OneDrive\Documentos\practica\appPractica\appPractica\obj\Debug\appPractica.Winform.UI.frmPersona.resources
+C:\Users\ortiz\OneDrive\Documentos\practica\appPractica\appPractica\obj\Debug\appPractica.csproj.GenerateResource.cache
+C:\Users\ortiz\OneDrive\Documentos\practica\appPractica\appPractica\obj\Debug\appPractica.csproj.CoreCompileInputs.cache
+C:\Users\ortiz\OneDrive\Documentos\practica\appPractica\appPractica\obj\Debug\appPractica.exe
+C:\Users\ortiz\OneDrive\Documentos\practica\appPractica\appPractica\obj\Debug\appPractica.pdb
